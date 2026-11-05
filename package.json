@@ -1,0 +1,37 @@
+{
+  "name": "claude-otel-r2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Claude Platform OpenTelemetry traces -> Cloudflare Worker -> Basin Pipelines -> gzipped JSON lines in R2. Deployed with Alchemy v2.",
+  "type": "module",
+  "scripts": {
+    "plan": "alchemy plan",
+    "deploy": "alchemy deploy",
+    "destroy": "alchemy destroy",
+    "logs": "alchemy logs --tail",
+    "typecheck": "tsc -p .",
+    "test": "tsx --test test/handler.test.ts",
+    "smoke": "tsx scripts/smoke-fixture.ts && esbuild src/worker.ts --bundle --format=esm --platform=neutral --target=es2022 --main-fields=module,main --conditions=workerd,worker,browser --outfile=.smoke/worker.js --log-level=warning && node test/workerd.smoke.mjs .smoke/worker.js",
+    "gen": "buf generate",
+    "fixtures": "python3 scripts/make_fixtures.py",
+    "duckdb": "node scripts/duckdb.mjs"
+  },
+  "dependencies": {
+    "22": "^0.0.0",
+    "@alchemy.run/cloudflare": "2.0.0-beta.85",
+    "@bufbuild/protobuf": "^2.16.0",
+    "@effect/platform-node": "^4.1.2",
+    "alchemy": "2.0.0-beta.85",
+    "effect": "^4.1.2"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "^1.75.0",
+    "@bufbuild/protoc-gen-es": "^2.16.0",
+    "@cloudflare/workers-types": "^5.20261103.1",
+    "@types/node": "^24.19.2",
+    "esbuild": "^0.28.2",
+    "miniflare": "^4.20260730.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
