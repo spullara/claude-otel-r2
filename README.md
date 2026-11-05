@@ -91,3 +91,7 @@ Keep `src/stream-schema.ts` equal to the span record in `src/otlp.ts`. A change 
 | `src/gen/` | Generated TypeScript. Do not edit these files by hand. |
 | `scripts/duckdb.mjs` | SQL shell for the stored spans |
 | `test/` | Handler tests and the Miniflare smoke test |
+
+## License
+
+MIT. See `LICENSE`. The files in `proto/` keep their own license in `proto/LICENSE`.

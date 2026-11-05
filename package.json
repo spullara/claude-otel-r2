@@ -2,6 +2,7 @@
   "name": "claude-otel-r2",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "description": "Claude Platform OpenTelemetry traces -> Cloudflare Worker -> Basin Pipelines -> gzipped JSON lines in R2. Deployed with Alchemy v2.",
   "type": "module",
   "scripts": {
