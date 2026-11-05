@@ -18,7 +18,6 @@
     "duckdb": "node scripts/duckdb.mjs"
   },
   "dependencies": {
-    "22": "^0.0.0",
     "@alchemy.run/cloudflare": "2.0.0-beta.85",
     "@bufbuild/protobuf": "^2.16.0",
     "@effect/platform-node": "^4.1.2",
